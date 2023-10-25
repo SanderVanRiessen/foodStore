@@ -1,0 +1,84 @@
+{
+  "productItems": [
+    {
+      "id": 1,
+      "name": "Product 1",
+      "price": 100,
+      "image": ["https://via.placeholder.com/150"],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl eget ultricies aliquam, quam libero hendrerit nu",
+      "category": "category 1",
+      "location": "location 1",
+      "contact": "contact 1"
+    },
+    {
+      "id": 2,
+      "name": "Product 2",
+      "price": 200,
+      "image": ["https://via.placeholder.com/150"],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl eget ultricies aliquam, quam libero hendrerit nu",
+      "category": "category 2",
+      "location": "location 2",
+      "contact": "contact 2"
+    },
+    {
+      "id": 3,
+      "name": "Product 3",
+      "price": 300,
+      "image": ["https://via.placeholder.com/150"],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl eget ultricies aliquam, quam libero hendrerit nu",
+      "category": "category 3",
+      "location": "location 3",
+      "contact": "contact 3"
+    },
+    {
+      "id": 4,
+      "name": "Product 4",
+      "price": 400,
+      "image": ["https://via.placeholder.com/150"],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl eget ultricies aliquam, quam libero hendrerit nu",
+      "category": "category 4",
+      "location": "location 4",
+      "contact": "contact 4"
+    },
+    {
+      "id": 5,
+      "name": "Product 5",
+      "price": 500,
+      "image": ["https://via.placeholder.com/150"],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl eget ultricies aliquam, quam libero hendrerit nu",
+      "category": "category 5",
+      "location": "location 5",
+      "contact": "contact 5"
+    },
+    {
+      "id": 6,
+      "name": "Product 1",
+      "price": 100,
+      "image": ["https://via.placeholder.com/150"],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl eget ultricies aliquam, quam libero hendrerit nu",
+      "category": "category 1",
+      "location": "location 1",
+      "contact": "contact 1"
+    },
+    {
+      "id": 7,
+      "name": "Product 1",
+      "price": 100,
+      "image": ["https://via.placeholder.com/150"],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl eget ultricies aliquam, quam libero hendrerit nu",
+      "category": "category 1",
+      "location": "location 1",
+      "contact": "contact 1"
+    },
+    {
+      "id": 8,
+      "name": "Product 1",
+      "price": 100,
+      "image": ["https://via.placeholder.com/150"],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl eget ultricies aliquam, quam libero hendrerit nu",
+      "category": "category 1",
+      "location": "location 1",
+      "contact": "contact 1"
+    }
+  ]
+}

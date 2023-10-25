@@ -9,7 +9,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import en from './src/local/en/translations.json';
 import nl from './src/local/nl/translations.json';
 import {BarIconsProps} from './src/types';
-import {Home, Settings, Bookmark, Cart} from './src/pages';
+import {Home, Settings, Bookmark, Cart, Filter} from './src/pages';
 
 i18n.use(initReactI18next).init({
   compatibilityJSON: 'v3',
@@ -25,8 +25,13 @@ i18n.use(initReactI18next).init({
 
 const HomeStack = createNativeStackNavigator();
 const HomeStackScreen = () => (
-  <HomeStack.Navigator screenOptions={{headerShown: false}}>
-    <HomeStack.Screen name="Main" component={Home} />
+  <HomeStack.Navigator>
+    <HomeStack.Screen
+      name="Main"
+      component={Home}
+      options={{headerShown: false}}
+    />
+    <HomeStack.Screen name="Filter" component={Filter} />
   </HomeStack.Navigator>
 );
 

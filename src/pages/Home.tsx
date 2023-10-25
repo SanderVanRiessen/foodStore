@@ -1,10 +1,12 @@
 import React from 'react';
-import {ScrollView, Text} from 'react-native';
+import {ScrollView} from 'react-native';
+import {HomeFilter, ProductList} from '../layout';
 
 const Home = (): JSX.Element => {
   return (
     <ScrollView>
-      <Text>Home</Text>
+      <HomeFilter />
+      <ProductList />
     </ScrollView>
   );
 };
