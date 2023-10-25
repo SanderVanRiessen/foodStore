@@ -1,0 +1,9 @@
+{
+  "translation": {
+    "Welcome to React": "Welcome to React and react-i18next",
+    "Home": "Thuis",
+    "Settings": "Instellingen",
+    "Bookmark": "Favorieten",
+    "Cart": "Winkelwagen"
+  }
+}

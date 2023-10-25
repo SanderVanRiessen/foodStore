@@ -1,118 +1,91 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import i18n from 'i18next';
+import {initReactI18next, useTranslation} from 'react-i18next';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {NavigationContainer} from '@react-navigation/native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import en from './src/local/en/translations.json';
+import nl from './src/local/nl/translations.json';
+import {BarIconsProps} from './src/types';
+import {Home, Settings, Bookmark, Cart} from './src/pages';
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
-
-function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-}
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+i18n.use(initReactI18next).init({
+  compatibilityJSON: 'v3',
+  resources: {
+    en,
+    nl,
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
+  fallbackLng: 'nl',
+  interpolation: {
+    escapeValue: false,
   },
 });
+
+const HomeStack = createNativeStackNavigator();
+const HomeStackScreen = () => (
+  <HomeStack.Navigator screenOptions={{headerShown: false}}>
+    <HomeStack.Screen name="Main" component={Home} />
+  </HomeStack.Navigator>
+);
+
+const SettingsStack = createNativeStackNavigator();
+const SettingsStackScreen = () => (
+  <SettingsStack.Navigator screenOptions={{headerShown: false}}>
+    <SettingsStack.Screen name="SettingsMain" component={Settings} />
+  </SettingsStack.Navigator>
+);
+
+const BookmarkStack = createNativeStackNavigator();
+const BookmerkStackScreen = () => (
+  <BookmarkStack.Navigator screenOptions={{headerShown: false}}>
+    <BookmarkStack.Screen name="BookmarkMain" component={Bookmark} />
+  </BookmarkStack.Navigator>
+);
+
+const CartStack = createNativeStackNavigator();
+const CartStackScreen = () => (
+  <CartStack.Navigator screenOptions={{headerShown: false}}>
+    <CartStack.Screen name="CartMain" component={Cart} />
+  </CartStack.Navigator>
+);
+
+const Tab = createBottomTabNavigator();
+
+function barIcons({name, color, size}: BarIconsProps): JSX.Element {
+  let iconName = 'home';
+  if (['Bookmark', 'Favorieten'].includes(name)) {
+    iconName = 'heart';
+  }
+  if (['Settings', 'Instellingen'].includes(name)) {
+    iconName = 'cog';
+  }
+  if (['Cart', 'Winkelwagen'].includes(name)) {
+    iconName = 'shopping-cart';
+  }
+  return <Icon name={iconName} size={size} color={color} />;
+}
+function App(): JSX.Element {
+  const {t} = useTranslation();
+
+  return (
+    <NavigationContainer>
+      <Tab.Navigator
+        screenOptions={({route}) => ({
+          tabBarIcon: ({color, size}) => {
+            return barIcons({name: route.name, color, size});
+          },
+          headerShown: false,
+        })}
+        initialRouteName={t('Home')}>
+        <Tab.Screen name={t('Home')} component={HomeStackScreen} />
+        <Tab.Screen name={t('Settings')} component={SettingsStackScreen} />
+        <Tab.Screen name={t('Bookmark')} component={BookmerkStackScreen} />
+        <Tab.Screen name={t('Cart')} component={CartStackScreen} />
+      </Tab.Navigator>
+    </NavigationContainer>
+  );
+}
 
 export default App;
