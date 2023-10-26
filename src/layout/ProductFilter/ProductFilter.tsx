@@ -5,9 +5,11 @@ import styles from './styles';
 import {Button, CategoryItem} from '../../components';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useFocusEffect} from '@react-navigation/native';
+import {useTranslation} from 'react-i18next';
 
 const ProductFilter = (): JSX.Element => {
   const {data, loading, error} = useCategories();
+  const {t} = useTranslation();
   const [selected, setSelected] = useState<string[]>([]);
 
   useFocusEffect(
@@ -50,7 +52,7 @@ const ProductFilter = (): JSX.Element => {
       ))}
       <View>
         <Button
-          text="Clear filter"
+          text={t('cancelFilter')}
           onClick={() => {
             AsyncStorage.removeItem('categories');
             setSelected([]);

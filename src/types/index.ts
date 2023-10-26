@@ -10,6 +10,7 @@ type Pages = {
   Cart: undefined;
   CartMain: undefined;
   Filter: undefined;
+  ProductDetail: {product: ProductItem};
 };
 
 interface BarIconsProps {

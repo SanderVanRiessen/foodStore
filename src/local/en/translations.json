@@ -4,6 +4,7 @@
     "Home": "Home",
     "Settings": "Settings",
     "Bookmark": "Bookmark",
-    "Cart": "Cart"
+    "Cart": "Cart",
+    "cancelFilter": "Clear Filter"
   }
 }
