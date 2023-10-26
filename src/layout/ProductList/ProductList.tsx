@@ -40,18 +40,18 @@ const ProductList = ({filter}: ProductListProps): JSX.Element => {
   if (error) {
     return <Text>Error...</Text>;
   }
+  const filterdData = data
+    .filter(({category}) =>
+      categories.data.length > 0
+        ? categories.data.some(item => item === category)
+        : true,
+    )
+    .filter(({name}) => name.toLowerCase().match(filter.toLowerCase()));
   return (
     <View style={styles.container}>
-      {data
-        .filter(({name, category}) =>
-          name.toLowerCase().match(filter.toLowerCase()) &&
-          categories.data.length > 0
-            ? categories.data.some(item => item === category)
-            : true,
-        )
-        .map((item, i) => (
-          <ProductCard key={i} product={item} />
-        ))}
+      {filterdData.map((item, i) => (
+        <ProductCard key={i} product={item} />
+      ))}
     </View>
   );
 };
