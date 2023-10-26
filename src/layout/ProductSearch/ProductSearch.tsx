@@ -5,7 +5,14 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import {useNavigation} from '@react-navigation/native';
 import {StackNavigation} from '../../types';
 
-const HomeFilter = (): JSX.Element => {
+interface ProductSearchProps {
+  filter: string;
+  onChangeFilter: (filter: string) => void;
+}
+const ProductSearch = ({
+  filter,
+  onChangeFilter,
+}: ProductSearchProps): JSX.Element => {
   const navigation = useNavigation<StackNavigation>();
 
   function handlePress() {
@@ -13,7 +20,11 @@ const HomeFilter = (): JSX.Element => {
   }
   return (
     <View style={styles.container}>
-      <TextInput style={styles.searchInput} />
+      <TextInput
+        style={styles.searchInput}
+        value={filter}
+        onChange={e => onChangeFilter(e.nativeEvent.text)}
+      />
       <TouchableOpacity style={styles.filterButton} onPress={handlePress}>
         <Icon name="align-justify" size={25} />
       </TouchableOpacity>
@@ -21,4 +32,4 @@ const HomeFilter = (): JSX.Element => {
   );
 };
 
-export default HomeFilter;
+export default ProductSearch;

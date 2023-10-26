@@ -1,4 +1,5 @@
-import HomeFilter from './HomeFilter/HomeFilter';
+import ProductSearch from './ProductSearch/ProductSearch';
 import ProductList from './ProductList/ProductList';
+import ProductFilter from './ProductFilter/ProductFilter';
 
-export {HomeFilter, ProductList};
+export {ProductSearch, ProductList, ProductFilter};

@@ -1,10 +1,11 @@
 import React from 'react';
-import {ScrollView, Text} from 'react-native';
+import {ScrollView} from 'react-native';
+import {ProductFilter} from '../layout';
 
 const Filter = (): JSX.Element => {
   return (
     <ScrollView>
-      <Text>Filter</Text>
+      <ProductFilter />
     </ScrollView>
   );
 };

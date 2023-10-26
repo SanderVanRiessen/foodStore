@@ -1,12 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {ScrollView} from 'react-native';
-import {HomeFilter, ProductList} from '../layout';
+import {ProductSearch, ProductList} from '../layout';
 
 const Home = (): JSX.Element => {
+  const [filter, setFilter] = useState('');
   return (
     <ScrollView>
-      <HomeFilter />
-      <ProductList />
+      <ProductSearch filter={filter} onChangeFilter={setFilter} />
+      <ProductList filter={filter} />
     </ScrollView>
   );
 };

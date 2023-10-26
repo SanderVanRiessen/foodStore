@@ -1,13 +1,40 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import {View, Text} from 'react-native';
 import {useProductItems} from '../../apicalls/getProductItems';
 import {ProductCard} from '../../components';
 import styles from './styles';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {useFocusEffect} from '@react-navigation/native';
 
-const ProductList = (): JSX.Element => {
+interface ProductListProps {
+  filter: string;
+}
+const ProductList = ({filter}: ProductListProps): JSX.Element => {
   const {data, loading, error} = useProductItems();
+  const [categories, setCategories] = React.useState({
+    loading: true,
+    error: false,
+    data: [],
+  });
 
-  if (loading) {
+  useFocusEffect(
+    useCallback(() => {
+      setCategories(prev => ({...prev, loading: true}));
+      AsyncStorage.getItem('categories').then(res => {
+        if (res) {
+          setCategories(prev => ({
+            ...prev,
+            loading: false,
+            data: JSON.parse(res),
+          }));
+        } else {
+          setCategories({error: true, loading: false, data: []});
+        }
+      });
+    }, []),
+  );
+
+  if (loading || categories.loading) {
     return <Text>Loading...</Text>;
   }
   if (error) {
@@ -15,9 +42,16 @@ const ProductList = (): JSX.Element => {
   }
   return (
     <View style={styles.container}>
-      {data.map(item => (
-        <ProductCard product={item} />
-      ))}
+      {data
+        .filter(({name, category}) =>
+          name.toLowerCase().match(filter.toLowerCase()) &&
+          categories.data.length > 0
+            ? categories.data.some(item => item === category)
+            : true,
+        )
+        .map((item, i) => (
+          <ProductCard key={i} product={item} />
+        ))}
     </View>
   );
 };
