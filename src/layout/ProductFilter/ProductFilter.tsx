@@ -50,9 +50,9 @@ const ProductFilter = (): JSX.Element => {
           isSelected={selected.includes(item)}
         />
       ))}
-      <View>
+      <View style={styles.buttonContainer}>
         <Button
-          text={t('cancelFilter')}
+          content={t('cancelFilter')}
           onClick={() => {
             AsyncStorage.removeItem('categories');
             setSelected([]);

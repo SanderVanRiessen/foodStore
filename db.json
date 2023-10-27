@@ -1,6 +1,187 @@
 {
-  "Bookmarks": [],
-  "Cart": [],
+  "Bookmarks": [
+    {
+      "id": 1,
+      "name": "Product 1",
+      "price": 100,
+      "images": [
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150",
+        "https://via.placeholder.com/150"
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl eget ultricies aliquam, quam libero hendrerit nu",
+      "category": "category 1",
+      "location": "location 1",
+      "contact": "contact 1"
+    },
+    {
+      "id": 3,
+      "name": "Product 3",
+      "price": 300,
+      "images": [
+        "https://via.placeholder.com/150"
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl eget ultricies aliquam, quam libero hendrerit nu",
+      "category": "category 3",
+      "location": "location 3",
+      "contact": "contact 3"
+    },
+    {
+      "id": 7,
+      "name": "Product 1",
+      "price": 100,
+      "images": [
+        "https://via.placeholder.com/150"
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl eget ultricies aliquam, quam libero hendrerit nu",
+      "category": "category 1",
+      "location": "location 1",
+      "contact": "contact 1"
+    },
+    {
+      "id": 8,
+      "name": "Product 1",
+      "price": 100,
+      "images": [
+        "https://via.placeholder.com/150"
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl eget ultricies aliquam, quam libero hendrerit nu",
+      "category": "category 1",
+      "location": "location 1",
+      "contact": "contact 1"
+    }
+  ],
+  "cart": [
+    {
+      "product": {
+        "id": 3,
+        "name": "Product 3",
+        "price": 300,
+        "images": [
+          "https://via.placeholder.com/150"
+        ],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl eget ultricies aliquam, quam libero hendrerit nu",
+        "category": "category 3",
+        "location": "location 3",
+        "contact": "contact 3"
+      },
+      "quantity": 1,
+      "id": 2
+    },
+    {
+      "product": {
+        "id": 3,
+        "name": "Product 3",
+        "price": 300,
+        "images": [
+          "https://via.placeholder.com/150"
+        ],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl eget ultricies aliquam, quam libero hendrerit nu",
+        "category": "category 3",
+        "location": "location 3",
+        "contact": "contact 3"
+      },
+      "quantity": 1,
+      "id": 3
+    },
+    {
+      "product": {
+        "id": 3,
+        "name": "Product 3",
+        "price": 300,
+        "images": [
+          "https://via.placeholder.com/150"
+        ],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl eget ultricies aliquam, quam libero hendrerit nu",
+        "category": "category 3",
+        "location": "location 3",
+        "contact": "contact 3"
+      },
+      "quantity": 1,
+      "id": 4
+    },
+    {
+      "product": {
+        "id": 3,
+        "name": "Product 3",
+        "price": 300,
+        "images": [
+          "https://via.placeholder.com/150"
+        ],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl eget ultricies aliquam, quam libero hendrerit nu",
+        "category": "category 3",
+        "location": "location 3",
+        "contact": "contact 3"
+      },
+      "quantity": 1,
+      "id": 6
+    },
+    {
+      "product": {
+        "id": 3,
+        "name": "Product 3",
+        "price": 300,
+        "images": [
+          "https://via.placeholder.com/150"
+        ],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl eget ultricies aliquam, quam libero hendrerit nu",
+        "category": "category 3",
+        "location": "location 3",
+        "contact": "contact 3"
+      },
+      "quantity": 1,
+      "id": 7
+    },
+    {
+      "product": {
+        "id": 3,
+        "name": "Product 3",
+        "price": 300,
+        "images": [
+          "https://via.placeholder.com/150"
+        ],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl eget ultricies aliquam, quam libero hendrerit nu",
+        "category": "category 3",
+        "location": "location 3",
+        "contact": "contact 3"
+      },
+      "quantity": 1,
+      "id": 8
+    },
+    {
+      "product": {
+        "id": 3,
+        "name": "Product 3",
+        "price": 300,
+        "images": [
+          "https://via.placeholder.com/150"
+        ],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl eget ultricies aliquam, quam libero hendrerit nu",
+        "category": "category 3",
+        "location": "location 3",
+        "contact": "contact 3"
+      },
+      "quantity": 1,
+      "id": 9
+    },
+    {
+      "product": {
+        "id": 3,
+        "name": "Product 3",
+        "price": 300,
+        "images": [
+          "https://via.placeholder.com/150"
+        ],
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl eget ultricies aliquam, quam libero hendrerit nu",
+        "category": "category 3",
+        "location": "location 3",
+        "contact": "contact 3"
+      },
+      "quantity": 1,
+      "id": 10
+    }
+  ],
   "productItems": [
     {
       "id": 1,

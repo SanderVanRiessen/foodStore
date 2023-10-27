@@ -34,12 +34,6 @@ const ProductList = ({filter}: ProductListProps): JSX.Element => {
     }, []),
   );
 
-  if (loading || categories.loading) {
-    return <Text>Loading...</Text>;
-  }
-  if (error) {
-    return <Text>Error...</Text>;
-  }
   const filterdData = data
     .filter(({category}) =>
       categories.data.length > 0
@@ -47,6 +41,13 @@ const ProductList = ({filter}: ProductListProps): JSX.Element => {
         : true,
     )
     .filter(({name}) => name.toLowerCase().match(filter.toLowerCase()));
+
+  if (loading || categories.loading) {
+    return <Text>Loading...</Text>;
+  }
+  if (error) {
+    return <Text>Error...</Text>;
+  }
   return (
     <View style={styles.container}>
       {filterdData.map((item, i) => (

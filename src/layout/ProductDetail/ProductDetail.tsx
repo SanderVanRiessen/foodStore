@@ -10,6 +10,7 @@ import {
   useBookmark,
 } from '../../apicalls/Bookmarks';
 import {Image} from '../../components';
+import {saveItemInCart} from '../../apicalls/Cart';
 
 interface ProductDetailProps {
   product: ProductItem;
@@ -30,6 +31,10 @@ const ProductDetail = ({product}: ProductDetailProps): JSX.Element => {
     }
   }
 
+  function addToCart() {
+    saveItemInCart(product, 1);
+  }
+
   useEffect(() => {
     if (data?.id) {
       setIsBookmarked(true);
@@ -47,7 +52,7 @@ const ProductDetail = ({product}: ProductDetailProps): JSX.Element => {
               <Icon name="heart" size={30} />
             )}
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={addToCart}>
             <Icon name="shopping-cart" size={30} />
           </TouchableOpacity>
         </View>
@@ -61,7 +66,7 @@ const ProductDetail = ({product}: ProductDetailProps): JSX.Element => {
       </View>
       <View style={styles.imageContainer}>
         {images.map((url, i) => (
-          <Image key={i} url={url} />
+          <Image width={150} height={150} key={i} url={url} />
         ))}
       </View>
     </ScrollView>

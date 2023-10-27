@@ -4,11 +4,13 @@ import styles from './styles';
 
 interface ImageProps {
   url: string;
+  width: number;
+  height: number;
 }
 
-const Image = ({url}: ImageProps): JSX.Element => {
+const Image = ({url, width, height}: ImageProps): JSX.Element => {
   return (
-    <View style={styles.container}>
+    <View style={{...styles.container, width, height}}>
       <Img
         style={styles.image}
         source={{

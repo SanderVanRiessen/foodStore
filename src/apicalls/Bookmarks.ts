@@ -7,15 +7,23 @@ export function useBookmarks() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
+  const fetchData = () => {
     fetch(url + 'Bookmarks')
       .then(response => response.json())
       .then(json => setData(json))
       .catch(e => setError(e))
       .finally(() => setLoading(false));
+  };
+
+  useEffect(() => {
+    fetchData();
   }, []);
 
-  return {data, error, loading};
+  const refetch = () => {
+    fetchData();
+  };
+
+  return {data, error, loading, refetch};
 }
 
 export function useBookmark(id: number) {

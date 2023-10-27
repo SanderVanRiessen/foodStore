@@ -32,4 +32,10 @@ interface ProductItem {
   contact: string;
 }
 
-export type {Pages, BarIconsProps, StackNavigation, ProductItem};
+interface CartItem {
+  id: number;
+  product: ProductItem;
+  quantity: number;
+}
+
+export type {Pages, BarIconsProps, StackNavigation, ProductItem, CartItem};

@@ -1,11 +1,12 @@
 import React from 'react';
-import {ScrollView, Text} from 'react-native';
+import {View} from 'react-native';
+import {ShoppingCart} from '../layout';
 
 const Cart = (): JSX.Element => {
   return (
-    <ScrollView>
-      <Text>Cart</Text>
-    </ScrollView>
+    <View>
+      <ShoppingCart />
+    </View>
   );
 };
 

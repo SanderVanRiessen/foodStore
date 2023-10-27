@@ -6,9 +6,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: 'black',
     padding: 10,
-    margin: 10,
     borderRadius: 10,
     justifyContent: 'center',
+    alignItems: 'center',
   },
   text: {
     fontSize: 18,
