@@ -31,7 +31,7 @@ const Bookmark = (): JSX.Element => {
   }
   return (
     <View style={styles.container}>
-      {data.length === 0 && (
+      {data.length === 0 && !loading && (
         <Text style={styles.notFound}>No Bookmarks found</Text>
       )}
       <FlatList

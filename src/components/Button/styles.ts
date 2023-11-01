@@ -9,10 +9,12 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
+    height: '100%',
   },
   text: {
     fontSize: 18,
     color: 'white',
+    textAlign: 'center',
   },
 });
 

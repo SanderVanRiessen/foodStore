@@ -9,8 +9,9 @@ import {
   saveBookmark,
   useBookmark,
 } from '../../apicalls/Bookmarks';
-import {Image} from '../../components';
+import {Image, SubDetailItem} from '../../components';
 import {saveItemInCart} from '../../apicalls/Cart';
+import {useTranslation} from 'react-i18next';
 
 interface ProductDetailProps {
   product: ProductItem;
@@ -20,6 +21,7 @@ const ProductDetail = ({product}: ProductDetailProps): JSX.Element => {
   const {id, name, price, description, location, contact, images} = product;
   const [isBookmarked, setIsBookmarked] = useState(false);
   const {data} = useBookmark(id);
+  const {t} = useTranslation();
 
   function handleBookmark() {
     if (isBookmarked) {
@@ -56,12 +58,12 @@ const ProductDetail = ({product}: ProductDetailProps): JSX.Element => {
             <Icon name="shopping-cart" size={30} />
           </TouchableOpacity>
         </View>
-        <Text style={styles.detailText}>{name}</Text>
+        <Text style={styles.detailTitle}>{name}</Text>
         <Text style={styles.descriptionText}>{description}</Text>
         <View style={styles.subDetails}>
-          <Text style={styles.priceText}>${price}</Text>
-          <Text style={styles.contactText}>{contact}</Text>
-          <Text style={styles.locationText}>{location}</Text>
+          <SubDetailItem label={t('price')} value={`$${price}`} />
+          <SubDetailItem label={t('contact')} value={contact} />
+          <SubDetailItem label={t('location')} value={location} />
         </View>
       </View>
       <View style={styles.imageContainer}>

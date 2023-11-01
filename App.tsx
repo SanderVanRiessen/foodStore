@@ -64,11 +64,14 @@ const BookmerkStackScreen = () => (
 );
 
 const CartStack = createNativeStackNavigator();
-const CartStackScreen = () => (
-  <CartStack.Navigator screenOptions={{headerShown: false}}>
-    <CartStack.Screen name="CartMain" component={Cart} />
-  </CartStack.Navigator>
-);
+const CartStackScreen = () => {
+  const {t} = useTranslation();
+  return (
+    <CartStack.Navigator screenOptions={{headerShown: false}}>
+      <CartStack.Screen name={t('myShoppingCart')} component={Cart} />
+    </CartStack.Navigator>
+  );
+};
 
 const Tab = createBottomTabNavigator();
 
@@ -97,11 +100,11 @@ function App(): JSX.Element {
           },
           headerShown: false,
         })}
-        initialRouteName={t('Home')}>
-        <Tab.Screen name={t('Home')} component={HomeStackScreen} />
-        <Tab.Screen name={t('Settings')} component={SettingsStackScreen} />
-        <Tab.Screen name={t('Bookmark')} component={BookmerkStackScreen} />
-        <Tab.Screen name={t('Cart')} component={CartStackScreen} />
+        initialRouteName={t('home')}>
+        <Tab.Screen name={t('home')} component={HomeStackScreen} />
+        <Tab.Screen name={t('settings')} component={SettingsStackScreen} />
+        <Tab.Screen name={t('bookmark')} component={BookmerkStackScreen} />
+        <Tab.Screen name={t('cart')} component={CartStackScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );

@@ -1,10 +1,19 @@
 {
   "translation": {
-    "Welcome to React": "Welcome to React and react-i18next",
-    "Home": "Home",
-    "Settings": "Settings",
-    "Bookmark": "Bookmark",
-    "Cart": "Cart",
-    "cancelFilter": "Clear Filter"
+    "home": "Home",
+    "settings": "Settings",
+    "bookmark": "Bookmark",
+    "cart": "Cart",
+    "cancelFilter": "Clear Filter",
+    "myShoppingCart": "My Shopping Cart",
+    "totalPrice": "Total Price:",
+    "price": "Price:",
+    "location": "Location:",
+    "contact": "Contact:",
+    "recommendations": "Recommendations",
+    "noRecommendations": "No Recommendations",
+    "deliveryTime": "Delivery Time:",
+    "clearCart": "Empty shopping cart",
+    "checkout": "Checkout"
   }
 }

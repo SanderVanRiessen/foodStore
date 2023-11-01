@@ -20,10 +20,9 @@ const ProductCard = ({product}: ProductCardProps): JSX.Element => {
       <Image
         style={styles.img}
         source={{
-          uri: 'https://via.placeholder.com/150',
+          uri: product.images[0],
         }}
       />
-      {/* <img style={styles.img} src={product.images[0]} alt={product.name} /> */}
       <Text style={styles.name}>{name}</Text>
       <Text style={styles.price}>${price.toFixed(2)}</Text>
     </TouchableOpacity>

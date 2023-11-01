@@ -4,6 +4,8 @@ import Button from './Button/Button';
 import Image from './Image/Image';
 import BookMarkItem from './BookMarkItem/BookMarkItem';
 import ShoppingCartItem from './ShoppingCartItem/ShoppingCartItem';
+import SubDetailItem from './SubDetailItem/SubDetailItem';
+import CartFooter from './CartFooter/CartFooter';
 
 export {
   ProductCard,
@@ -12,4 +14,6 @@ export {
   Image,
   BookMarkItem,
   ShoppingCartItem,
+  SubDetailItem,
+  CartFooter,
 };

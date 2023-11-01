@@ -35,7 +35,8 @@ export function saveItemInCart(productItem: ProductItem, quantity: number) {
 }
 
 export function deleteCartItem(id: number) {
-  return fetch(url + 'Cart/' + id, {
+  return fetch(url + `Cart/${id}`, {
     method: 'DELETE',
+    headers,
   });
 }

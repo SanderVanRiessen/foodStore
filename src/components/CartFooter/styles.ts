@@ -3,14 +3,14 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
   container: {
     display: 'flex',
-    flexDirection: 'column',
-    flexWrap: 'wrap',
-    backgroundColor: '#fff',
-    margin: 16,
+    flexDirection: 'row',
+    margin: 5,
+    justifyContent: 'space-evenly',
+    height: '100%',
   },
   buttonContainer: {
-    margin: 10,
-    height: 40,
+    width: '45%',
+    height: 80,
   },
 });
 

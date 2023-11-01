@@ -19,34 +19,31 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
   },
-  detailText: {
+  detailTitle: {
     fontSize: 25,
     fontWeight: 'bold',
     color: '#333',
   },
-  priceText: {
-    fontSize: 20,
-    color: '#333',
-  },
   descriptionText: {
-    fontSize: 15,
+    fontSize: 17,
     color: '#333',
     textAlign: 'center',
   },
-  subDetails: {
+  subDetailText: {
+    fontSize: 13,
+    color: '#333',
+    flexGrow: 1,
+    flexBasis: 0,
+  },
+  subDetailItem: {
+    display: 'flex',
     flexDirection: 'row',
+  },
+  subDetails: {
+    flexDirection: 'column',
     justifyContent: 'space-between',
-    alignItems: 'center',
     width: '100%',
     marginVertical: 10,
-  },
-  contactText: {
-    fontSize: 20,
-    color: '#333',
-  },
-  locationText: {
-    fontSize: 20,
-    color: '#333',
   },
   imageContainer: {
     display: 'flex',
