@@ -50,13 +50,9 @@ const ShoppingCart = (): JSX.Element => {
       </View>
       <CartRecommendations categories={categories} />
       <CartFooter
-        onClickGreen={() => {}}
-        onClickRed={() => {
+        onClick={() => {
           const ids = data && data.map(item => item.id);
           handleClearCart(ids);
-        }}
-        onClickBlack={() => {
-          refetch();
         }}
       />
     </>

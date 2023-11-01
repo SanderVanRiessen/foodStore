@@ -1,44 +1,62 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View} from 'react-native';
 import styles from './styles';
 import Button from '../Button/Button';
 import {useTranslation} from 'react-i18next';
+import Modal from '../Modal/Modal';
+import {Text} from 'react-native';
 
 type CartFooterProps = {
-  onClickRed: () => void;
-  onClickGreen: () => void;
-  onClickBlack: () => void;
+  onClick: () => void;
 };
-const CartFooter = ({
-  onClickGreen,
-  onClickRed,
-  onClickBlack,
-}: CartFooterProps): JSX.Element => {
+const CartFooter = ({onClick}: CartFooterProps): JSX.Element => {
+  const [showModal, setShowModal] = useState(false);
   const {t} = useTranslation();
   return (
-    <View style={styles.container}>
-      {/* <View style={styles.buttonContainer}>
-        <Button
-          content={t('refresh')}
-          backgroundColor="black"
-          onClick={onClickBlack}
-        />
-      </View> */}
-      <View style={styles.buttonContainer}>
-        <Button
-          content={t('clearCart')}
-          backgroundColor="red"
-          onClick={onClickRed}
-        />
+    <>
+      <View style={styles.container}>
+        <View style={styles.buttonContainer}>
+          <Button
+            content={t('clearCart')}
+            backgroundColor="red"
+            onClick={onClick}
+          />
+        </View>
+        <View style={styles.buttonContainer}>
+          <Button
+            content={t('checkout')}
+            backgroundColor="green"
+            onClick={() => setShowModal(true)}
+          />
+        </View>
       </View>
-      <View style={styles.buttonContainer}>
-        <Button
-          content={t('checkout')}
-          backgroundColor="green"
-          onClick={onClickGreen}
-        />
-      </View>
-    </View>
+      {showModal && (
+        <Modal onDismiss={() => setShowModal(false)}>
+          <View style={styles.modalContainer}>
+            <Text>Are you sure you want to buy the products?</Text>
+            <View style={styles.container}>
+              <View style={styles.modalButtonContainer}>
+                <Button
+                  content={t('cancel')}
+                  backgroundColor="red"
+                  onClick={() => setShowModal(false)}
+                />
+              </View>
+              <View style={styles.modalButtonContainer}>
+                <Button
+                  content={t('confirm')}
+                  backgroundColor="green"
+                  onClick={() => {
+                    setShowModal(false);
+                    onClick();
+                  }}
+                />
+              </View>
+            </View>
+          </View>
+        </Modal>
+      )}
+    </>
   );
 };
 
