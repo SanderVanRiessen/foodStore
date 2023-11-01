@@ -20,9 +20,8 @@ const ShoppingCart = (): JSX.Element => {
   const total = data && data.reduce((acc, item) => acc + item.product.price, 0);
 
   function handleClearCart(ids: number[]): void {
-    // const bulkRemove =
-    Promise.all(ids.map(id => deleteCartItem(id)));
-    // bulkRemove.finally(() => refetch());
+    const bulkRemove = Promise.all(ids.map(id => deleteCartItem(id)));
+    bulkRemove.finally(() => refetch());
   }
 
   function handleRemoveItem(id: number): void {

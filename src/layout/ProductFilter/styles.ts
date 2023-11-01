@@ -12,6 +12,12 @@ const styles = StyleSheet.create({
     margin: 10,
     height: 40,
   },
+  loader: {
+    flex: 1,
+    width: '100%',
+    marginTop: 16,
+    justifyContent: 'center',
+  },
 });
 
 export default styles;

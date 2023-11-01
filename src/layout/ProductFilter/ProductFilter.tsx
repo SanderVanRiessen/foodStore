@@ -1,5 +1,5 @@
 import React, {useCallback, useState} from 'react';
-import {Text, View} from 'react-native';
+import {ActivityIndicator, Text, View} from 'react-native';
 import {useCategories} from '../../apicalls/getCategories';
 import styles from './styles';
 import {Button, CategoryItem} from '../../components';
@@ -33,15 +33,17 @@ const ProductFilter = (): JSX.Element => {
     AsyncStorage.setItem('categories', JSON.stringify([...selected, name]));
   }
 
-  if (loading) {
-    return <Text>Loading...</Text>;
-  }
   if (error) {
     return <Text>Error...</Text>;
   }
   const categories = [...data];
   return (
     <View style={styles.container}>
+      {loading && (
+        <View style={styles.loader}>
+          <ActivityIndicator size={30} />
+        </View>
+      )}
       {categories.map((item, i) => (
         <CategoryItem
           key={i}

@@ -6,6 +6,7 @@ import BookMarkItem from './BookMarkItem/BookMarkItem';
 import ShoppingCartItem from './ShoppingCartItem/ShoppingCartItem';
 import SubDetailItem from './SubDetailItem/SubDetailItem';
 import CartFooter from './CartFooter/CartFooter';
+import Modal from './Modal/Modal';
 
 export {
   ProductCard,
@@ -16,4 +17,5 @@ export {
   ShoppingCartItem,
   SubDetailItem,
   CartFooter,
+  Modal,
 };

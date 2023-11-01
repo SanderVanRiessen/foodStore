@@ -9,7 +9,7 @@ import {
   saveBookmark,
   useBookmark,
 } from '../../apicalls/Bookmarks';
-import {Image, SubDetailItem} from '../../components';
+import {Image, Modal, SubDetailItem} from '../../components';
 import {saveItemInCart} from '../../apicalls/Cart';
 import {useTranslation} from 'react-i18next';
 
@@ -19,6 +19,7 @@ interface ProductDetailProps {
 
 const ProductDetail = ({product}: ProductDetailProps): JSX.Element => {
   const {id, name, price, description, location, contact, images} = product;
+  const [imageUrl, setImageUrl] = useState<null | string>(null);
   const [isBookmarked, setIsBookmarked] = useState(false);
   const {data} = useBookmark(id);
   const {t} = useTranslation();
@@ -68,9 +69,19 @@ const ProductDetail = ({product}: ProductDetailProps): JSX.Element => {
       </View>
       <View style={styles.imageContainer}>
         {images.map((url, i) => (
-          <Image width={150} height={150} key={i} url={url} />
+          <TouchableOpacity onPress={() => setImageUrl(url)}>
+            <Image width={150} height={150} key={i} url={url} />
+          </TouchableOpacity>
         ))}
       </View>
+      {imageUrl && (
+        <Modal
+          onDismiss={() => {
+            setImageUrl(null);
+          }}>
+          <Image width={330} height={330} url={imageUrl} />
+        </Modal>
+      )}
     </ScrollView>
   );
 };

@@ -7,6 +7,12 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     backgroundColor: '#fff',
   },
+  loader: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginVertical: 16,
+  },
 });
 
 export default styles;

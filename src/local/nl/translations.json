@@ -14,6 +14,7 @@
     "noRecommendations": "Geen aanbevelingen",
     "deliveryTime": "Bezorg tijd:",
     "clearCart": "Winkelwagen leeg maken",
-    "checkout": "Betalen"
+    "checkout": "Betalen",
+    "generalError": "Er ging iets fout"
   }
 }

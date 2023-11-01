@@ -1,16 +1,18 @@
 import React, {useCallback} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, ActivityIndicator} from 'react-native';
 import {useProductItems} from '../../apicalls/getProductItems';
 import {ProductCard} from '../../components';
 import styles from './styles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useFocusEffect} from '@react-navigation/native';
+import {useTranslation} from 'react-i18next';
 
 interface ProductListProps {
   filter: string;
 }
 const ProductList = ({filter}: ProductListProps): JSX.Element => {
   const {data, loading, error} = useProductItems();
+  const {t} = useTranslation();
   const [categories, setCategories] = React.useState({
     loading: true,
     error: false,
@@ -42,14 +44,14 @@ const ProductList = ({filter}: ProductListProps): JSX.Element => {
     )
     .filter(({name}) => name.toLowerCase().match(filter.toLowerCase()));
 
-  if (loading || categories.loading) {
-    return <Text>Loading...</Text>;
-  }
-  if (error) {
-    return <Text>Error...</Text>;
-  }
   return (
     <View style={styles.container}>
+      {loading && (
+        <View style={styles.loader}>
+          <ActivityIndicator size={30} />
+        </View>
+      )}
+      {error && <Text>{t('generalError')}</Text>}
       {filterdData.map((item, i) => (
         <ProductCard key={i} product={item} />
       ))}
