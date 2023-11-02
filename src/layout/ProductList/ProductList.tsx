@@ -6,6 +6,7 @@ import styles from './styles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useFocusEffect} from '@react-navigation/native';
 import {useTranslation} from 'react-i18next';
+import {useTheme} from '@rneui/themed';
 
 interface ProductListProps {
   filter: string;
@@ -13,6 +14,7 @@ interface ProductListProps {
 const ProductList = ({filter}: ProductListProps): JSX.Element => {
   const {data, loading, error} = useProductItems();
   const {t} = useTranslation();
+  const {theme} = useTheme();
   const [categories, setCategories] = React.useState({
     loading: true,
     error: false,
@@ -45,7 +47,8 @@ const ProductList = ({filter}: ProductListProps): JSX.Element => {
     .filter(({name}) => name.toLowerCase().match(filter.toLowerCase()));
 
   return (
-    <View style={styles.container}>
+    <View
+      style={{...styles.container, backgroundColor: theme.colors.background}}>
       {loading && (
         <View style={styles.loader}>
           <ActivityIndicator size={30} />

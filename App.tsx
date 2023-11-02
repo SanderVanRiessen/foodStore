@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
+import {ThemeProvider, createTheme} from '@rneui/themed';
 
 import en from './src/local/en/translations.json';
 import nl from './src/local/nl/translations.json';
@@ -27,6 +28,12 @@ i18n.use(initReactI18next).init({
   fallbackLng: 'nl',
   interpolation: {
     escapeValue: false,
+  },
+});
+
+const theme = createTheme({
+  lightColors: {
+    background: '#fff',
   },
 });
 
@@ -92,21 +99,23 @@ function App(): JSX.Element {
   const {t} = useTranslation();
 
   return (
-    <NavigationContainer>
-      <Tab.Navigator
-        screenOptions={({route}) => ({
-          tabBarIcon: ({color, size}) => {
-            return barIcons({name: route.name, color, size});
-          },
-          headerShown: false,
-        })}
-        initialRouteName={t('home')}>
-        <Tab.Screen name={t('home')} component={HomeStackScreen} />
-        <Tab.Screen name={t('settings')} component={SettingsStackScreen} />
-        <Tab.Screen name={t('bookmark')} component={BookmerkStackScreen} />
-        <Tab.Screen name={t('cart')} component={CartStackScreen} />
-      </Tab.Navigator>
-    </NavigationContainer>
+    <ThemeProvider theme={theme}>
+      <NavigationContainer>
+        <Tab.Navigator
+          screenOptions={({route}) => ({
+            tabBarIcon: ({color, size}) => {
+              return barIcons({name: route.name, color, size});
+            },
+            headerShown: false,
+          })}
+          initialRouteName={t('home')}>
+          <Tab.Screen name={t('home')} component={HomeStackScreen} />
+          <Tab.Screen name={t('settings')} component={SettingsStackScreen} />
+          <Tab.Screen name={t('bookmark')} component={BookmerkStackScreen} />
+          <Tab.Screen name={t('cart')} component={CartStackScreen} />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </ThemeProvider>
   );
 }
 

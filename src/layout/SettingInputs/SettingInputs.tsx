@@ -1,35 +1,29 @@
-import React, {useCallback, useState} from 'react';
+import React, {useState} from 'react';
 import {View, Text} from 'react-native';
 import SelectDropdown from 'react-native-select-dropdown';
 import {useTranslation} from 'react-i18next';
 import {TriangleColorPicker, toHsv, fromHsv} from 'react-native-color-picker';
 import styles from './styles';
 import {Panel} from '../../components';
-import {useFocusEffect} from '@react-navigation/native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import {useTheme} from '@rneui/themed';
 
 const SettingInputs = (): JSX.Element => {
-  const [backgroundColor, setBackgroundColor] = useState('#fff');
-  const {t, i18n} = useTranslation();
-
-  useFocusEffect(
-    useCallback(() => {
-      AsyncStorage.getItem('backGround').then(res => {
-        if (res) {
-          setBackgroundColor(JSON.parse(res));
-        } else {
-          setBackgroundColor('#fff');
-        }
-      });
-    }, []),
+  const {theme, updateTheme} = useTheme();
+  const [backgroundColor, setBackgroundColor] = useState(
+    theme.colors.background,
   );
+  const {t, i18n} = useTranslation();
 
   function handleTranslation(lang: string) {
     i18n.changeLanguage(lang);
   }
 
   return (
-    <View style={{...styles.container, backgroundColor}}>
+    <View
+      style={{
+        ...styles.container,
+        backgroundColor: theme.colors.background,
+      }}>
       <Text style={styles.title}>SettingInputs</Text>
       <Panel title="Language">
         <SelectDropdown
@@ -54,11 +48,13 @@ const SettingInputs = (): JSX.Element => {
             style={styles.colorPicker}
             hideControls
             onColorChange={color => {
-              setBackgroundColor(fromHsv(color));
-              AsyncStorage.setItem(
-                'backGround',
-                JSON.stringify(fromHsv(color)),
-              );
+              const formatedColor = fromHsv(color);
+              setBackgroundColor(formatedColor);
+              updateTheme({
+                lightColors: {
+                  background: formatedColor,
+                },
+              });
             }}
           />
         </View>
