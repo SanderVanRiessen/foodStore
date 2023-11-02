@@ -21,7 +21,12 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   colorPicker: {
-    backgroundColor: 'black',
+    display: 'flex',
+    height: 350,
+    width: '100%',
+  },
+  colorPickerContainer: {
+    padding: 16,
   },
   selectDropdown: {
     width: '100%',
