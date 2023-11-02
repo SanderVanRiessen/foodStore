@@ -1,11 +1,12 @@
 import React from 'react';
-import {ScrollView, Text} from 'react-native';
+import {View} from 'react-native';
+import {SettingInputs} from '../layout';
 
 const Settings = (): JSX.Element => {
   return (
-    <ScrollView>
-      <Text>Settings</Text>
-    </ScrollView>
+    <View>
+      <SettingInputs />
+    </View>
   );
 };
 

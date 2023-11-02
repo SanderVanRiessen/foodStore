@@ -7,6 +7,7 @@ import ShoppingCartItem from './ShoppingCartItem/ShoppingCartItem';
 import SubDetailItem from './SubDetailItem/SubDetailItem';
 import CartFooter from './CartFooter/CartFooter';
 import Modal from './Modal/Modal';
+import Panel from './Panel/Panel';
 
 export {
   ProductCard,
@@ -18,4 +19,5 @@ export {
   SubDetailItem,
   CartFooter,
   Modal,
+  Panel,
 };

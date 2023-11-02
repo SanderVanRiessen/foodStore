@@ -4,6 +4,7 @@ import ProductFilter from './ProductFilter/ProductFilter';
 import ProductDetail from './ProductDetail/ProductDetail';
 import ShoppingCart from './ShoppingCart/ShoppingCart';
 import CartRecommendations from './CartRecommendations/CartRecommendations';
+import SettingInputs from './SettingInputs/SettingInputs';
 
 export {
   ProductSearch,
@@ -12,4 +13,5 @@ export {
   ProductDetail,
   ShoppingCart,
   CartRecommendations,
+  SettingInputs,
 };
