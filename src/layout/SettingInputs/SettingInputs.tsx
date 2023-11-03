@@ -3,7 +3,7 @@ import {View, Text} from 'react-native';
 import SelectDropdown from 'react-native-select-dropdown';
 import {useTranslation} from 'react-i18next';
 import {TriangleColorPicker, toHsv, fromHsv} from 'react-native-color-picker';
-import styles from './styles';
+import useStyles from './styles';
 import {Panel} from '../../components';
 import {useTheme} from '@rneui/themed';
 
@@ -13,17 +13,14 @@ const SettingInputs = (): JSX.Element => {
     theme.colors.background,
   );
   const {t, i18n} = useTranslation();
+  const styles = useStyles();
 
   function handleTranslation(lang: string) {
     i18n.changeLanguage(lang);
   }
 
   return (
-    <View
-      style={{
-        ...styles.container,
-        backgroundColor: theme.colors.background,
-      }}>
+    <View style={styles.container}>
       <Text style={styles.title}>SettingInputs</Text>
       <Panel title="Language">
         <SelectDropdown

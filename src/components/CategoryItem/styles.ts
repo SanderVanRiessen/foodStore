@@ -11,6 +11,7 @@ const styles = StyleSheet.create({
     padding: 10,
     margin: 10,
     width: '93%',
+    backgroundColor: '#fff',
   },
   icon: {
     marginRight: 10,

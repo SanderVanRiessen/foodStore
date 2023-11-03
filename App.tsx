@@ -33,7 +33,7 @@ i18n.use(initReactI18next).init({
 
 const theme = createTheme({
   lightColors: {
-    background: '#fff',
+    background: '#d2d2d2',
   },
 });
 

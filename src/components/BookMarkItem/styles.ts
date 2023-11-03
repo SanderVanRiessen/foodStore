@@ -4,7 +4,9 @@ const styles = StyleSheet.create({
   container: {
     display: 'flex',
     flexDirection: 'row',
-    width: '100%',
+    backgroundColor: '#fff',
+    margin: 8,
+    borderRadius: 8,
   },
   text: {
     marginVertical: 20,

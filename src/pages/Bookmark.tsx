@@ -1,26 +1,27 @@
 import React from 'react';
-import {FlatList, StyleSheet, Text, View} from 'react-native';
+import {FlatList, Text, View} from 'react-native';
 import {BookMarkItem} from '../components';
 import {useBookmarks} from '../apicalls/Bookmarks';
 import {useNavigation} from '@react-navigation/native';
 import {ProductItem, StackNavigation} from '../types';
+import {makeStyles} from '@rneui/themed';
 
-const styles = StyleSheet.create({
+const useStyles = makeStyles(theme => ({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    margin: 20,
+    backgroundColor: theme.colors.background,
   },
   notFound: {
     textAlign: 'center',
     fontSize: 20,
     marginTop: 20,
   },
-});
+}));
 
 const Bookmark = (): JSX.Element => {
   const {data, loading, error, refetch} = useBookmarks();
   const navigation = useNavigation<StackNavigation>();
+  const styles = useStyles();
 
   function goToProductDetail(product: ProductItem) {
     navigation.navigate('ProductDetail', {product});

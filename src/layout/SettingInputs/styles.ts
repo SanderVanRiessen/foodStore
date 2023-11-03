@@ -1,6 +1,6 @@
-import {StyleSheet} from 'react-native';
+import {makeStyles} from '@rneui/themed';
 
-const styles = StyleSheet.create({
+const useStyles = makeStyles(_ => ({
   container: {
     display: 'flex',
     flexDirection: 'column',
@@ -31,6 +31,6 @@ const styles = StyleSheet.create({
   selectDropdown: {
     width: '100%',
   },
-});
+}));
 
-export default styles;
+export default useStyles;

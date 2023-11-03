@@ -1,12 +1,11 @@
-import {StyleSheet} from 'react-native';
+import {makeStyles} from '@rneui/themed';
 
-const styles = StyleSheet.create({
+const useStyles = makeStyles(theme => ({
   container: {
     display: 'flex',
     flexDirection: 'column',
     flexWrap: 'wrap',
-    backgroundColor: '#fff',
-    margin: 16,
+    backgroundColor: theme.colors.background,
   },
   buttonContainer: {
     margin: 10,
@@ -18,6 +17,6 @@ const styles = StyleSheet.create({
     marginTop: 16,
     justifyContent: 'center',
   },
-});
+}));
 
-export default styles;
+export default useStyles;
