@@ -13,7 +13,9 @@ type CartRecommendationsProps = {
 };
 
 const emptyList = (t: TFunction, error: string | null): JSX.Element => (
-  <Text style={styles.subText}>{error ? error : t('noRecommendations')}</Text>
+  <Text style={styles.subText}>
+    {error ? t('generalError') : t('noRecommendations')}
+  </Text>
 );
 
 const CartRecommendations = ({

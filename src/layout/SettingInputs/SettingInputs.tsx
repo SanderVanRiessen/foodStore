@@ -21,8 +21,8 @@ const SettingInputs = (): JSX.Element => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>SettingInputs</Text>
-      <Panel title="Language">
+      <Text style={styles.title}>{t('settings')}</Text>
+      <Panel title={t('language')}>
         <SelectDropdown
           buttonStyle={styles.selectDropdown}
           defaultValue={i18n.language}
@@ -38,7 +38,7 @@ const SettingInputs = (): JSX.Element => {
           }}
         />
       </Panel>
-      <Panel title="Theme">
+      <Panel title={t('theme')}>
         <View style={styles.colorPickerContainer}>
           <TriangleColorPicker
             color={toHsv(backgroundColor)}

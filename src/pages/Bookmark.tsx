@@ -5,6 +5,7 @@ import {useBookmarks} from '../apicalls/Bookmarks';
 import {useNavigation} from '@react-navigation/native';
 import {ProductItem, StackNavigation} from '../types';
 import {makeStyles} from '@rneui/themed';
+import {useTranslation} from 'react-i18next';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -22,18 +23,19 @@ const Bookmark = (): JSX.Element => {
   const {data, loading, error, refetch} = useBookmarks();
   const navigation = useNavigation<StackNavigation>();
   const styles = useStyles();
+  const {t} = useTranslation();
 
   function goToProductDetail(product: ProductItem) {
     navigation.navigate('ProductDetail', {product});
   }
 
   if (error) {
-    return <Text>Error...</Text>;
+    return <Text>{t('generalError')}</Text>;
   }
   return (
     <View style={styles.container}>
       {data.length === 0 && !loading && (
-        <Text style={styles.notFound}>No Bookmarks found</Text>
+        <Text style={styles.notFound}>{t('noBookMarksFound')}</Text>
       )}
       <FlatList
         data={data}

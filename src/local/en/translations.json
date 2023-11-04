@@ -15,6 +15,13 @@
     "deliveryTime": "Delivery Time:",
     "clearCart": "Empty shopping cart",
     "checkout": "Checkout",
-    "generalError": "Something went wrong"
+    "generalError": "Something went wrong",
+    "language": "Language",
+    "theme": "Theme",
+    "CartEmpty": "Your shopping cart is empty",
+    "noBookMarksFound": "No Bookmarks Found",
+    "confirmPurchase": "Are you sure you want to buy the products?",
+    "cancel": "Cancel",
+    "confirm": "Confirm"
   }
 }

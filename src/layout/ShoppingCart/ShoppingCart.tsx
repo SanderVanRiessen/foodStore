@@ -5,16 +5,18 @@ import {deleteCartItem, useCart} from '../../apicalls/Cart';
 import styles from './styles';
 import CartSummary from '../CartSummary/CartSummary';
 import CartRecommendations from '../CartRecommendations/CartRecommendations';
+import {useTranslation} from 'react-i18next';
+import {TFunction} from 'i18next';
 
-const emptyList = (error: null | string): JSX.Element =>
-  error ? (
-    <Text>error...</Text>
-  ) : (
-    <Text style={styles.subText}>Cart is empty</Text>
-  );
+const emptyList = (t: TFunction, error: null | string): JSX.Element => (
+  <Text style={styles.subText}>
+    {error ? t('generalError') : t('CartEmpty')}
+  </Text>
+);
 
 const ShoppingCart = (): JSX.Element => {
   const {data, loading, error, refetch} = useCart();
+  const {t} = useTranslation();
 
   const categories = data && data.map(item => item.product.category);
   const total = data && data.reduce((acc, item) => acc + item.product.price, 0);
@@ -42,7 +44,7 @@ const ShoppingCart = (): JSX.Element => {
               onRemove={() => handleRemoveItem(item.id)}
             />
           )}
-          ListEmptyComponent={() => emptyList(error)}
+          ListEmptyComponent={() => emptyList(t, error)}
           keyExtractor={(_, index) => index.toString()}
           refreshing={loading}
           onRefresh={refetch}

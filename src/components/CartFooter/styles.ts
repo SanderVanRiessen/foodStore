@@ -13,7 +13,6 @@ const styles = StyleSheet.create({
     height: 80,
   },
   modalButtonContainer: {
-    width: '30%',
     height: 50,
     margin: 10,
   },

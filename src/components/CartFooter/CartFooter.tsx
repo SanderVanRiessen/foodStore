@@ -9,6 +9,7 @@ import {Text} from 'react-native';
 type CartFooterProps = {
   onClick: () => void;
 };
+
 const CartFooter = ({onClick}: CartFooterProps): JSX.Element => {
   const [showModal, setShowModal] = useState(false);
   const {t} = useTranslation();
@@ -33,7 +34,7 @@ const CartFooter = ({onClick}: CartFooterProps): JSX.Element => {
       {showModal && (
         <Modal onDismiss={() => setShowModal(false)}>
           <View style={styles.modalContainer}>
-            <Text>Are you sure you want to buy the products?</Text>
+            <Text>{t('confirmPurchase')}</Text>
             <View style={styles.container}>
               <View style={styles.modalButtonContainer}>
                 <Button

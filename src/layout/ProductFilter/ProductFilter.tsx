@@ -34,10 +34,11 @@ const ProductFilter = (): JSX.Element => {
     AsyncStorage.setItem('categories', JSON.stringify([...selected, name]));
   }
 
-  if (error) {
-    return <Text>Error...</Text>;
-  }
   const categories = [...data];
+
+  if (error) {
+    return <Text>{t('generalError')}</Text>;
+  }
   return (
     <View style={styles.container}>
       {loading && (
