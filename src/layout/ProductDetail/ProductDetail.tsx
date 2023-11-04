@@ -18,7 +18,7 @@ interface ProductDetailProps {
 }
 
 const ProductDetail = ({product}: ProductDetailProps): JSX.Element => {
-  const {id, name, price, description, location, contact, images} = product;
+  const {id, price, location, contact, images} = product;
   const [imageUrl, setImageUrl] = useState<null | string>(null);
   const [isBookmarked, setIsBookmarked] = useState(false);
   const {data} = useBookmark(id);
@@ -61,8 +61,10 @@ const ProductDetail = ({product}: ProductDetailProps): JSX.Element => {
             <Icon name="shopping-cart" size={30} />
           </TouchableOpacity>
         </View>
-        <Text style={styles.detailTitle}>{name}</Text>
-        <Text style={styles.descriptionText}>{description}</Text>
+        <Text style={styles.detailTitle}>{t(`products.${id}.name`)}</Text>
+        <Text style={styles.descriptionText}>
+          {t(`products.${id}.description`)}
+        </Text>
         <View style={styles.subDetails}>
           <SubDetailItem label={t('price')} value={`$${price}`} />
           <SubDetailItem label={t('contact')} value={contact} />

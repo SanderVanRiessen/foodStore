@@ -23,6 +23,146 @@
     "confirmPurchase": "Are you sure you want to buy the products?",
     "cancel": "Cancel",
     "confirm": "Confirm",
-    "noCategoriesFound": "No Categories Found"
+    "noCategoriesFound": "No Categories Found",
+    "products": {
+      "1": {
+        "name": "Margherita Pizza",
+        "description": "Delicious Margherita pizza with tomato, mozzarella, and basil.",
+        "category": "Italian"
+      },
+      "2": {
+        "name": "Sushi Platter",
+        "description": "Fresh sushi platter with a variety of nigiri and rolls.",
+        "category": "Sushi"
+      },
+      "3": {
+        "name": "Burger Combo",
+        "description": "A classic burger combo with fries and a drink.",
+        "category": "Burgers"
+      },
+      "4": {
+        "name": "Chicken Tikka Masala",
+        "description": "Spicy and creamy chicken tikka masala with naan bread.",
+        "category": "Indian"
+      },
+      "5": {
+        "name": "Fresh Fruit Salad",
+        "description": "A healthy and refreshing fruit salad with seasonal fruits.",
+        "category": "Salads"
+      },
+      "6": {
+        "name": "Pepperoni Pizza",
+        "description": "Classic pepperoni pizza with a generous topping of pepperoni slices.",
+        "category": "Italian"
+      },
+      "7": {
+        "name": "Tempura Sushi Roll",
+        "description": "A mouthwatering tempura sushi roll with eel and avocado.",
+        "category": "Sushi"
+      },
+      "8": {
+        "name": "Veggie Burger",
+        "description": "A delicious veggie burger with fresh lettuce, tomatoes, and pickles.",
+        "category": "Burgers"
+      },
+      "9": {
+        "name": "Butter Chicken",
+        "description": "Rich and creamy butter chicken with naan and basmati rice.",
+        "category": "Indian"
+      },
+      "10": {
+        "name": "Caesar Salad",
+        "description": "A classic Caesar salad with crisp romaine lettuce and Caesar dressing.",
+        "category": "Salads"
+      },
+      "11": {
+        "name": "Mushroom and Swiss Burger",
+        "description": "A savory burger topped with sautéed mushrooms and Swiss cheese.",
+        "category": "Burgers"
+      },
+      "12": {
+        "name": "Pad Thai Noodles",
+        "description": "Stir-fried rice noodles with shrimp, tofu, and tamarind sauce.",
+        "category": "Thai"
+      },
+      "13": {
+        "name": "Greek Salad",
+        "description": "A fresh Greek salad with feta cheese, olives, and Greek dressing.",
+        "category": "Salads"
+      },
+      "14": {
+        "name": "Hawaiian Pizza",
+        "description": "A tropical Hawaiian pizza with ham, pineapple, and mozzarella.",
+        "category": "Italian"
+      },
+      "15": {
+        "name": "Dragon Roll Sushi",
+        "description": "An exquisite dragon roll sushi with eel and avocado.",
+        "category": "Sushi"
+      },
+      "16": {
+        "name": "BBQ Bacon Burger",
+        "description": "A hearty BBQ bacon burger with crispy bacon strips and BBQ sauce.",
+        "category": "Burgers"
+      },
+      "17": {
+        "name": "Tandoori Chicken",
+        "description": "Tandoori-style roasted chicken with traditional Indian spices.",
+        "category": "Indian"
+      },
+      "18": {
+        "name": "Caprese Salad",
+        "description": "A refreshing Caprese salad with fresh mozzarella, tomatoes, and basil.",
+        "category": "Salads"
+      },
+      "19": {
+        "name": "BBQ Pulled Pork Sandwich",
+        "description": "Slow-cooked BBQ pulled pork sandwich with coleslaw and pickles.",
+        "category": "Sandwiches"
+      },
+      "20": {
+        "name": "Vegetable Fried Rice",
+        "description": "Delicious vegetable fried rice with a medley of fresh vegetables and soy sauce.",
+        "category": "Chinese"
+      },
+      "21": {
+        "name": "Cheese Steak Sandwich",
+        "description": "A classic cheese steak sandwich with thinly sliced beef and melted cheese.",
+        "category": "Sandwiches"
+      },
+      "22": {
+        "name": "Mango Lassi",
+        "description": "A refreshing mango lassi drink with yogurt and mango pulp.",
+        "category": "Beverages"
+      },
+      "23": {
+        "name": "Shrimp Scampi Pasta",
+        "description": "Linguini pasta with succulent shrimp in a garlic butter and white wine sauce.",
+        "category": "Italian"
+      },
+      "24": {
+        "name": "Falafel Wrap",
+        "description": "A delicious falafel wrap with tahini sauce and fresh vegetables.",
+        "category": "Middle Eastern"
+      },
+      "25": {
+        "name": "Chocolate Fondue",
+        "description": "Decadent chocolate fondue served with a variety of dippable treats.",
+        "category": "Desserts"
+      }
+    },
+    "categories": {
+      "italian": "Italian",
+      "sushi": "Sushi",
+      "burgers": "Burgers",
+      "indian": "Indian",
+      "salads": "Salads",
+      "thai": "Thai",
+      "sandwiches": "Sandwiches",
+      "chinese": "Chinese",
+      "beverages": "Beverages",
+      "middle eastern": "Middle Eastern",
+      "desserts": "Desserts"
+    }
   }
 }

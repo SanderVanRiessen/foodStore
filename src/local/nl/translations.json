@@ -23,6 +23,146 @@
     "confirmPurchase": "Weet u zeker dat u de producten wilt kopen?",
     "cancel": "Annuleren",
     "confirm": "Bevestigen",
-    "noCategoriesFound": "Geen categorieën gevonden"
+    "noCategoriesFound": "Geen categorieën gevonden",
+    "products": {
+      "1": {
+        "name": "Pizza margherita ",
+        "description": "Heerlijke Margherita pizza met tomaat, mozzarella en basilicum.",
+        "category": "Italiaans"
+      },
+      "2": {
+        "name": "Sushi platter",
+        "description": "Verse sushi platter met een variëteit aan nigiri en rolls.",
+        "category": "Sushi"
+      },
+      "3": {
+        "name": "Burger combo",
+        "description": "Een klassieke burger combo met frietjes en een drankje.",
+        "category": "Burgers"
+      },
+      "4": {
+        "name": "Kip tikka masala",
+        "description": "Pittige en romige chicken tikka masala met naanbrood.",
+        "category": "Indiaas"
+      },
+      "5": {
+        "name": "Vers fruit salade",
+        "description": "Een gezonde en verfrissende fruitsalade met seizoensvruchten.",
+        "category": "Salades"
+      },
+      "6": {
+        "name": "Pizza pepperoni",
+        "description": "Klassieke pepperoni pizza met een royale topping van pepperoni plakjes.",
+        "category": "Italiaans"
+      },
+      "7": {
+        "name": "Tempura sushi roll",
+        "description": "Een verrukkelijke tempura sushi rol met paling en avocado.",
+        "category": "Sushi"
+      },
+      "8": {
+        "name": "Vegatarische burger",
+        "description": "Een heerlijke veggie burger met verse sla, tomaten en augurken.",
+        "category": "Burgers"
+      },
+      "9": {
+        "name": "Boterkip",
+        "description": "Boterkip op traditionele Indiase wijze bereid met naan en basmatirijst.",
+        "category": "Indiaas"
+      },
+      "10": {
+        "name": "Caesar salade",
+        "description": "Een klassieke Caesar salade met knapperige romainesla en Caesardressing.",
+        "category": "Salades"
+      },
+      "11": {
+        "name": "Champignon en zwitserse burger",
+        "description": "Een smakelijke burger met gebakken champignons en Zwitserse kaas.",
+        "category": "Burgers"
+      },
+      "12": {
+        "name": "Pad thai-noedels",
+        "description": "Roergebakken rijstnoedels met garnalen, tofu en tamarindesaus.",
+        "category": "Thais"
+      },
+      "13": {
+        "name": "Griekse salade",
+        "description": "Een frisse Griekse salade met feta kaas, olijven en Griekse dressing.",
+        "category": "Salades"
+      },
+      "14": {
+        "name": "Pizza hawaiian",
+        "description": "Een tropische Hawaïaanse pizza met ham, ananas en mozzarella.",
+        "category": "Italiaans"
+      },
+      "15": {
+        "name": "Dragon roll sushi",
+        "description": "Een voortreffelijke dragon roll sushi met paling en avocado.",
+        "category": "Sushi"
+      },
+      "16": {
+        "name": "BBQ spek burger",
+        "description": "Een stevige BBQ-bacon burger met knapperige baconreepjes en BBQ-saus.",
+        "category": "Burgers"
+      },
+      "17": {
+        "name": "Kip tandoori",
+        "description": "Tandoori-stijl geroosterde kip met traditionele Indiase kruiden.",
+        "category": "Indiaas"
+      },
+      "18": {
+        "name": "Caprese salade",
+        "description": "Een verfrissende Caprese salade met verse mozzarella, tomaten en basilicum.",
+        "category": "Salades"
+      },
+      "19": {
+        "name": "Sandwich met BBQ-trokken varkensvlees",
+        "description": "Langzaam gegaand BBQ-getrokken varkensvleessandwich met koolsalade en augurken.",
+        "category": "Broodjes"
+      },
+      "20": {
+        "name": "Plantaardige gebakken rijst",
+        "description": "Heerlijke groentefried rice met een variëteit aan verse groenten en sojasaus.",
+        "category": "Chinees"
+      },
+      "21": {
+        "name": "Broodje Kaasbiefstuk",
+        "description": "Een klassiek broodje kaasbiefstuk met dun gesneden rundvlees en gesmolten kaas.",
+        "category": "Broodjes"
+      },
+      "22": {
+        "name": "Mango Lassi",
+        "description": "Een verfrissend mangolassi-drankje met yoghurt en mangopulp.",
+        "category": "Drankjes"
+      },
+      "23": {
+        "name": "Garnalen Scampi Pasta",
+        "description": "Linguini pasta met smakelijke garnalen in een knoflookboter- en witte wijnsaus.",
+        "category": "Italiaans"
+      },
+      "24": {
+        "name": "Falafel Wrap",
+        "description": "Een heerlijke falafelwrap met tahinisaus en verse groenten.",
+        "category": "Midden-Oosters"
+      },
+      "25": {
+        "name": "Chocolade fondue",
+        "description": "Weelderige chocolade fondue geserveerd met diverse dipbare lekkernijen.",
+        "category": "Desserts"
+      }
+    },
+    "categories": {
+      "italian": "Italiaans",
+      "sushi": "Sushi",
+      "burgers": "Hamburgers",
+      "indian": "Indiaas",
+      "salads": "Salades",
+      "thai": "Thais",
+      "sandwiches": "Broodjes",
+      "chinese": "Chinees",
+      "beverages": "Dranken",
+      "middle eastern": "Midden-Oosters",
+      "desserts": "Desserts"
+    }
   }
 }

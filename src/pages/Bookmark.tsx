@@ -47,7 +47,7 @@ const Bookmark = (): JSX.Element => {
         renderItem={({item}) => (
           <BookMarkItem
             key={item.id}
-            description={item.description}
+            description={t(`products.${item.id}.description`)}
             image={item.images[0]}
             onClick={() => goToProductDetail(item)}
           />

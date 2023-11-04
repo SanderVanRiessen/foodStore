@@ -55,7 +55,7 @@ const ProductFilter = (): JSX.Element => {
         refreshing={loading}
         renderItem={({item}) => (
           <CategoryItem
-            name={item}
+            name={t(`categories.${item.toLocaleLowerCase()}`)}
             onClick={() => handleSelection(item)}
             isSelected={selected.includes(item)}
           />
