@@ -8,6 +8,7 @@ import {makeStyles} from '@rneui/themed';
 const useStyles = makeStyles(theme => ({
   container: {
     backgroundColor: theme.colors.background,
+    height: '100%',
   },
 }));
 

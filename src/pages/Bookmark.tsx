@@ -1,23 +1,34 @@
 import React from 'react';
-import {FlatList, Text, View} from 'react-native';
+import {FlatList, StyleProp, Text, TextStyle, View} from 'react-native';
 import {BookMarkItem} from '../components';
 import {useBookmarks} from '../apicalls/Bookmarks';
 import {useNavigation} from '@react-navigation/native';
 import {ProductItem, StackNavigation} from '../types';
 import {makeStyles} from '@rneui/themed';
 import {useTranslation} from 'react-i18next';
+import {TFunction} from 'i18next';
 
 const useStyles = makeStyles(theme => ({
   container: {
     flex: 1,
     backgroundColor: theme.colors.background,
   },
-  notFound: {
+  subText: {
     textAlign: 'center',
     fontSize: 20,
     marginTop: 20,
   },
 }));
+
+const emptyList = (
+  t: TFunction,
+  error: string | null,
+  styles: StyleProp<TextStyle>,
+): JSX.Element => (
+  <Text style={styles}>
+    {error ? t('generalError') : t('noRecommendations')}
+  </Text>
+);
 
 const Bookmark = (): JSX.Element => {
   const {data, loading, error, refetch} = useBookmarks();
@@ -29,14 +40,8 @@ const Bookmark = (): JSX.Element => {
     navigation.navigate('ProductDetail', {product});
   }
 
-  if (error) {
-    return <Text>{t('generalError')}</Text>;
-  }
   return (
     <View style={styles.container}>
-      {data.length === 0 && !loading && (
-        <Text style={styles.notFound}>{t('noBookMarksFound')}</Text>
-      )}
       <FlatList
         data={data}
         renderItem={({item}) => (
@@ -49,6 +54,7 @@ const Bookmark = (): JSX.Element => {
         )}
         refreshing={loading}
         onRefresh={refetch}
+        ListEmptyComponent={() => emptyList(t, error, styles.subText)}
       />
     </View>
   );

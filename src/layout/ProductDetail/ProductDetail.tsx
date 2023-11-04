@@ -41,6 +41,8 @@ const ProductDetail = ({product}: ProductDetailProps): JSX.Element => {
   useEffect(() => {
     if (data?.id) {
       setIsBookmarked(true);
+    } else {
+      setIsBookmarked(false);
     }
   }, [data]);
 
@@ -69,8 +71,8 @@ const ProductDetail = ({product}: ProductDetailProps): JSX.Element => {
       </View>
       <View style={styles.imageContainer}>
         {images.map((url, i) => (
-          <TouchableOpacity onPress={() => setImageUrl(url)}>
-            <Image width={150} height={150} key={i} url={url} />
+          <TouchableOpacity key={i} onPress={() => setImageUrl(url)}>
+            <Image width={150} height={150} url={url} />
           </TouchableOpacity>
         ))}
       </View>

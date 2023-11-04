@@ -1,11 +1,22 @@
 import React, {useCallback, useState} from 'react';
-import {ActivityIndicator, Text, View} from 'react-native';
+import {FlatList, StyleProp, Text, TextStyle, View} from 'react-native';
 import {useCategories} from '../../apicalls/getCategories';
 import {Button, CategoryItem} from '../../components';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useFocusEffect} from '@react-navigation/native';
 import {useTranslation} from 'react-i18next';
 import useStyles from './styles';
+import {TFunction} from 'i18next';
+
+const emptyList = (
+  t: TFunction,
+  error: string | null,
+  styles: StyleProp<TextStyle>,
+): JSX.Element => (
+  <Text style={styles}>
+    {error ? t('generalError') : t('noCategoriesFound')}
+  </Text>
+);
 
 const ProductFilter = (): JSX.Element => {
   const {data, loading, error} = useCategories();
@@ -27,33 +38,30 @@ const ProductFilter = (): JSX.Element => {
 
   function handleSelection(name: string): void {
     if (selected.includes(name)) {
-      setSelected(selected.filter(item => item !== name));
+      const selection = selected.filter(item => item !== name);
+      setSelected(selection);
+      AsyncStorage.setItem('categories', JSON.stringify(selection));
     } else {
       setSelected(prev => [...prev, name]);
+      AsyncStorage.setItem('categories', JSON.stringify([...selected, name]));
     }
-    AsyncStorage.setItem('categories', JSON.stringify([...selected, name]));
   }
 
-  const categories = [...data];
-
-  if (error) {
-    return <Text>{t('generalError')}</Text>;
-  }
   return (
     <View style={styles.container}>
-      {loading && (
-        <View style={styles.loader}>
-          <ActivityIndicator size={30} />
-        </View>
-      )}
-      {categories.map((item, i) => (
-        <CategoryItem
-          key={i}
-          name={item}
-          onClick={() => handleSelection(item)}
-          isSelected={selected.includes(item)}
-        />
-      ))}
+      <FlatList
+        style={styles.list}
+        data={[...data]}
+        refreshing={loading}
+        renderItem={({item}) => (
+          <CategoryItem
+            name={item}
+            onClick={() => handleSelection(item)}
+            isSelected={selected.includes(item)}
+          />
+        )}
+        ListEmptyComponent={() => emptyList(t, error, styles.subText)}
+      />
       <View style={styles.buttonContainer}>
         <Button
           content={t('cancelFilter')}

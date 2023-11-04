@@ -15,13 +15,14 @@
     "deliveryTime": "Bezorg tijd:",
     "clearCart": "Winkelwagen leeg maken",
     "checkout": "Betalen",
-    "generalError": "Er ging iets fout",
+    "generalError": "Er ging iets fout gegaan",
     "language": "Taal",
     "theme": "Thema",
     "CartEmpty": "Je winkelwagen is leeg",
     "noBookMarksFound": "Geen favorieten gevonden",
     "confirmPurchase": "Weet u zeker dat u de producten wilt kopen?",
     "cancel": "Annuleren",
-    "confirm": "Bevestigen"
+    "confirm": "Bevestigen",
+    "noCategoriesFound": "Geen categorieën gevonden"
   }
 }

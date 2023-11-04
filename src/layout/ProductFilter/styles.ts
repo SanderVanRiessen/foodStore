@@ -4,7 +4,6 @@ const useStyles = makeStyles(theme => ({
   container: {
     display: 'flex',
     flexDirection: 'column',
-    flexWrap: 'wrap',
     backgroundColor: theme.colors.background,
   },
   buttonContainer: {
@@ -16,6 +15,15 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
     marginTop: 16,
     justifyContent: 'center',
+  },
+  subText: {
+    width: '100%',
+    textAlign: 'center',
+    fontSize: 20,
+    marginTop: 20,
+  },
+  list: {
+    height: '91%',
   },
 }));
 
