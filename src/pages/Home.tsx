@@ -4,6 +4,7 @@ import {ProductSearch, ProductList} from '../layout';
 
 const Home = (): JSX.Element => {
   const [filter, setFilter] = useState('');
+
   return (
     <ScrollView>
       <ProductSearch filter={filter} onChangeFilter={setFilter} />

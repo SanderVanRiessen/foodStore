@@ -10,6 +10,7 @@ import {useTranslation} from 'react-i18next';
 interface ProductListProps {
   filter: string;
 }
+
 const ProductList = ({filter}: ProductListProps): JSX.Element => {
   const {data, loading, error} = useProductItems();
   const {t} = useTranslation();

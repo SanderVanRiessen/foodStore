@@ -3,11 +3,12 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
   container: {
     display: 'flex',
-    width: 180,
     height: 'auto',
     border: '1px solid #ddd',
     borderRadius: 4,
     padding: 16,
+    margin: 8,
+    flexGrow: 1,
     cursor: 'pointer',
     boxShadow: '0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)',
     backgroundColor: '#fff',
