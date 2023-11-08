@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {View, Text} from 'react-native';
 import SelectDropdown from 'react-native-select-dropdown';
 import {useTranslation} from 'react-i18next';
@@ -6,6 +6,7 @@ import {TriangleColorPicker, toHsv, fromHsv} from 'react-native-color-picker';
 import useStyles from './styles';
 import {Panel} from '../../components';
 import {useTheme} from '@rneui/themed';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const SettingInputs = (): JSX.Element => {
   const {theme, updateTheme} = useTheme();
@@ -18,6 +19,18 @@ const SettingInputs = (): JSX.Element => {
   function handleTranslation(lang: string) {
     i18n.changeLanguage(lang);
   }
+
+  useEffect(() => {
+    const timeOut = setTimeout(() => {
+      updateTheme({
+        lightColors: {
+          background: backgroundColor,
+        },
+      });
+      AsyncStorage.setItem('backgroundColor', backgroundColor);
+    }, 500);
+    return () => clearTimeout(timeOut);
+  }, [backgroundColor, updateTheme]);
 
   return (
     <View style={styles.container}>
@@ -43,15 +56,9 @@ const SettingInputs = (): JSX.Element => {
           <TriangleColorPicker
             color={toHsv(backgroundColor)}
             style={styles.colorPicker}
-            hideControls
             onColorChange={color => {
               const formatedColor = fromHsv(color);
               setBackgroundColor(formatedColor);
-              updateTheme({
-                lightColors: {
-                  background: formatedColor,
-                },
-              });
             }}
           />
         </View>
