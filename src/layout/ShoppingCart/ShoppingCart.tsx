@@ -21,9 +21,15 @@ const ShoppingCart = (): JSX.Element => {
   const categories = data && data.map(item => item.product.category);
   const total = data && data.reduce((acc, item) => acc + item.product.price, 0);
 
-  function handleClearCart(ids: number[]): void {
-    const bulkRemove = Promise.all(ids.map(id => deleteCartItem(id)));
-    bulkRemove.finally(() => refetch());
+  async function handleClearCart(ids: number[]) {
+    const refetchAfterEveryNIterations = 2;
+    for (let i = 0; i < ids.length; i++) {
+      await deleteCartItem(ids[i]);
+      if ((i + 1) % refetchAfterEveryNIterations === 0) {
+        await new Promise(resolve => setTimeout(resolve, 500));
+      }
+    }
+    refetch();
   }
 
   function handleRemoveItem(id: number): void {
