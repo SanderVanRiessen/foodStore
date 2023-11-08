@@ -28,7 +28,7 @@ const SettingInputs = (): JSX.Element => {
         },
       });
       AsyncStorage.setItem('backgroundColor', backgroundColor);
-    }, 500);
+    }, 1000);
     return () => clearTimeout(timeOut);
   }, [backgroundColor, updateTheme]);
 
@@ -56,6 +56,7 @@ const SettingInputs = (): JSX.Element => {
           <TriangleColorPicker
             color={toHsv(backgroundColor)}
             style={styles.colorPicker}
+            hideControls
             onColorChange={color => {
               const formatedColor = fromHsv(color);
               setBackgroundColor(formatedColor);

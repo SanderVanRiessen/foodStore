@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {ScrollView} from 'react-native';
 import {ProductSearch, ProductList} from '../layout';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -8,15 +8,17 @@ const Home = (): JSX.Element => {
   const [filter, setFilter] = useState('');
   const {updateTheme} = useTheme();
 
-  AsyncStorage.getItem('backgroundColor').then(value => {
-    if (value) {
-      updateTheme({
-        lightColors: {
-          background: value,
-        },
-      });
-    }
-  });
+  useEffect(() => {
+    AsyncStorage.getItem('backgroundColor').then(value => {
+      if (value) {
+        updateTheme({
+          lightColors: {
+            background: value,
+          },
+        });
+      }
+    });
+  }, [updateTheme]);
 
   return (
     <ScrollView>
