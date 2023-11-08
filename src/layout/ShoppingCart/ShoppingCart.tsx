@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, FlatList} from 'react-native';
 import {CartFooter, ShoppingCartItem} from '../../components';
 import {deleteCartItem, useCart} from '../../apicalls/Cart';
@@ -16,12 +16,14 @@ const emptyList = (t: TFunction, error: null | string): JSX.Element => (
 
 const ShoppingCart = (): JSX.Element => {
   const {data, loading, error, refetch} = useCart();
+  const [deleteLoading, setDeleteLoading] = useState(false);
   const {t} = useTranslation();
 
   const categories = data && data.map(item => item.product.category);
   const total = data && data.reduce((acc, item) => acc + item.product.price, 0);
 
   async function handleClearCart(ids: number[]) {
+    setDeleteLoading(true);
     const refetchAfterEveryNIterations = 2;
     for (let i = 0; i < ids.length; i++) {
       await deleteCartItem(ids[i]);
@@ -30,6 +32,7 @@ const ShoppingCart = (): JSX.Element => {
       }
     }
     refetch();
+    setDeleteLoading(false);
   }
 
   function handleRemoveItem(id: number): void {
@@ -52,7 +55,7 @@ const ShoppingCart = (): JSX.Element => {
           )}
           ListEmptyComponent={() => emptyList(t, error)}
           keyExtractor={(_, index) => index.toString()}
-          refreshing={loading}
+          refreshing={loading || deleteLoading}
           onRefresh={refetch}
         />
       </View>
